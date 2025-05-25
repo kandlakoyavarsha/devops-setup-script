@@ -1,0 +1,69 @@
+Step 0:create a file named setup.sh(created a bash file)
+Code:
+#!/bin/bash
+echo "Starting DevOps Environment Setup..."
+
+sudo apt update && sudo apt upgrade -y
+
+
+sudo apt install git -y
+
+
+sudo apt install python3 python3-pip -y
+
+
+wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg
+sudo install -o root -g root -m 644 packages.microsoft.gpg /usr/share/keyrings/
+sudo sh -c 'echo "deb [arch=amd64 signed-by=/usr/share/keyrings/packages.microsoft.gpg] \
+https://packages.microsoft.com/repos/code stable main" > /etc/apt/sources.list.d/vscode.list'         #these linesinstalled vs code
+
+
+
+sudo apt update
+sudo apt install code -y            
+pip install ruff debugpy jupyter cline uv numpy pandas streamlit
+
+echo "✅ All tools installed successfully!"
+
+
+🔍 Explanation of Each Line:
+Line	                              What It Does
+#!/bin/bash	        Tells the system this file should run with Bash shell.
+echo "..."	        Prints a message on screen so the user knows what’s happening.
+sudo apt update  	Updates your system’s list of available software.
+sudo apt upgrade -y	Installs the latest versions of installed packages.
+sudo apt install git -y	Installs Git. -y skips the “Are you sure?” prompt.
+sudo apt install python3 python3-pip -y	Installs Python and pip (Python’s package installer).
+VS Code lines	         Downloads and installs VS Code securely (needs a few extra steps).
+pip install ...	         Installs all Python tools/libraries in one line.
+
+
+🔹 Run the Script (in Terminal)
+Open your terminal
+
+Go to the folder where setup.sh is saved (use cd command)
+
+cd /path/to/your/script
+
+Give it permission to run:
+chmod +x setup.sh
+
+Then run it:
+./setup.sh
+
+
+🧾 Summary Table of Tools & Why You Installed Them
+Tool	Purpose (in 1 line)
+Git	Version control to track and manage code.
+VS Code	Code editor for writing and editing code.
+Ruff	Linter for checking and fixing Python code style.
+Python Debugger (debugpy)	Helps find and fix bugs in your code.
+Jupyter	Run and document Python code in a browser notebook.
+Cline	Tool for building command-line interfaces.
+uv	Fast package installer for Python.
+NumPy	Perform numerical operations in Python.
+Pandas	Analyze and manipulate datasets easily.
+Streamlit	Build interactive Python web apps quickly.
+Ollama	Run local large language models (LLMs) easily.
+
+
