@@ -23,10 +23,10 @@ sudo apt update
 sudo apt install code -y            
 pip install ruff debugpy jupyter cline uv numpy pandas streamlit
 
-echo "✅ All tools installed successfully!"
+echo " All tools installed successfully!"
 
 
-🔍 Explanation of Each Line:
+ Explanation of Each Line:
 Line	                              What It Does
 #!/bin/bash	        Tells the system this file should run with Bash shell.
 echo "..."	        Prints a message on screen so the user knows what’s happening.
